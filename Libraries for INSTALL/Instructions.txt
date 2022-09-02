@@ -1,0 +1,25 @@
+LIBRARIES______________________________________________________
+
+-Unzip it in c:/arduino/libraries
+
+-Open Arduino IDE and select "admin. libraries" and search for this libraries and install: 
+
+-MAPF (mapfloat).
+-Fastled.
+-Adafruit SSD1306.
+
+
+ATMEL 1284_____________________________________________________
+
+"mighty-1284p-1.6.3"
+-Unzip it in c:/arduino/hardware.
+
+Next time you open ARDUINO IDE you can choose this board:
+-"maniacbug Mighty 1284p 16Mhz using optiboot"
+
+-Select your COM and programmer (FTDI---AVRISPMKII) (ARDUINO UNO--ARDUINO AS ISP)
+
+-Select "Burn bootloader"
+
+Or if you want to upload an sketch press SHIFT and select "upload"
+
