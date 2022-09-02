@@ -1,4 +1,4 @@
-# Ignotus666-Bluetooth-MIDI-Controller
+# Ignotus666-Bluetooth-USB-MIDI-Controller
 This is my version i have built from Ignotus666 MIDI controller:
  - Pedalboard: https://github.com/ignotus666/Bluetooth-Pedalboard
  - Desktop-controller (pots): https://github.com/ignotus666/desktop-midi-controller
