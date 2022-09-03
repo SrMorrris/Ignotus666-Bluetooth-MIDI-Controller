@@ -116,18 +116,28 @@ If you have problems with pin-numbered. i bring you this other picture:
 ![ftdi-usb chip atmel](https://user-images.githubusercontent.com/80991642/188252661-82feb4ad-9cb0-47b4-8fa5-3b5c7b71b41f.png)
 
 You connect the ftdi-usb to the pc and open Arduino IDE:
--Select your board (maniacbugh mighty 1284 etc..).
--Select your COM port (mine COM 10)
--Select your type of programmer (ftdi-usb):AVRISPMKII
+
+
+- Select your board (maniacbugh mighty 1284 etc..):
+
+- Select your COM port (mine COM 10):
+
+- Select your type of programmer (ftdi-usb):AVRISPMKII:
 
 ![50280](https://user-images.githubusercontent.com/80991642/188249528-60330d37-2c5e-4091-b843-7455989ad99a.png)
 
-And you can select "burn bootloader" and then you can upload sketches , for example you can upload an ARDUINO-IDE Basics-example for test your board:
+
+And you can select "burn bootloader" and then you can upload sketches.
+
+For example you can upload an ARDUINO-IDE Basics-example for test your board:
+
+
 Open examples "blink" and connect one led to see what happen...
 
 ## Choosing an Arduino UNO for burn bootloader/ upload sketches (1284P).
 
 If you got an arduino uno it's the best solution i think..
+
 If you want to upload an sketch with arduino UNO, you must press SHIFT and then the upload button (Arduino IDE)
 
 This picture it's for connect an arduino UNO:
@@ -138,13 +148,22 @@ This picture it's for connect an arduino UNO:
 
 
 You connect the arduino uno to the pc and open Arduino IDE:
--Select your board (maniacbugh mighty 1284 etc..).
--Select your arduino uno COM port (mine COM 4)
--Select your type of programmer (arduino uno):arduinoasisp
+
+
+- Select your board (maniacbugh mighty 1284 etc..).
+
+- Select your arduino uno COM port (mine COM 4).
+
+- Select your type of programmer (arduino uno):arduinoasisp.
 
 ![50265](https://user-images.githubusercontent.com/80991642/188249494-11ef6aab-b6cb-476d-9aaa-a431de221bf3.png)
 
-And you can select "burn bootloader" and then you can upload sketches , for example you can upload an ARDUINO-IDE Basics-example for test your board:
+And you can select "burn bootloader" and then you can upload sketches.
+
+
+For example you can upload an ARDUINO-IDE Basics-example for test your board:
+
+
 Open examples "blink" and connect one led to see what happen...
 
 ![50274](https://user-images.githubusercontent.com/80991642/188249413-04938af2-d0fe-452e-9daa-710ddca12211.jpg)
@@ -152,4 +171,32 @@ Open examples "blink" and connect one led to see what happen...
 
 # Your battery circuit
 
- to be continuoso, pues no mas
+ You can choose whatever battery you want (3/5 volts i's good).
+
+  - 18650 batteries.
+
+   ![18650](https://user-images.githubusercontent.com/80991642/188254935-aa8c37af-5d47-4382-b714-c8a6a0ac6fdf.png)
+
+  - Old batteries (mobile, tablet, etc..). But please...Be careful..
+
+   ![50329](https://user-images.githubusercontent.com/80991642/188254926-39bac28b-aa3a-4872-b346-302078142226.jpg)
+
+   You will need a usb module charger, TP-4056, it's good and cheap.
+
+   ![4056module](https://user-images.githubusercontent.com/80991642/188254992-ab0ab3f9-a17c-4975-9eee-0e788d9f2140.png)
+
+   You connect a usb cable and you can charge your batteries (red light-charging/blue light-charge complete).
+
+
+   You also need a booster, MT-3608.
+
+   ![50413](https://user-images.githubusercontent.com/80991642/188255087-ef10ed31-d8c9-4d24-85c6-f3923262dbae.jpg)
+
+   And here you can see the full circuit:
+
+   ![CIRCUITOBATERIA](https://user-images.githubusercontent.com/80991642/188255284-29e71dac-d7cc-421a-81ea-227b5371676d.png)
+
+
+   # Configure HC-05 module
+
+  Y continuele continuele
