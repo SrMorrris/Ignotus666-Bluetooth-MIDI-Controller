@@ -85,12 +85,14 @@ For other atmel chips 328/644 etc.. it's mostly the same components, but differe
 
 ![standalone_arduino](https://user-images.githubusercontent.com/80991642/188252001-dbb5c8e9-f86c-4651-bfc5-4fd15e57db5c.png)
 
+![55780551-868e7780-5aa8-11e9-88bf-19ad038e9f07](https://user-images.githubusercontent.com/80991642/188256813-0a3e9ac0-c131-4daa-b03a-8c45820d8b39.png)
 
-Then, you need to install this board in your pc, so you can choose it for compile.
 
-There's so much types (sanguino,bob,etc..) now i will show you which one worked for me like a charm.
+Then, you need to install this board in your pc, so you can choose it in arduino IDE. 
 
-You need to visit this page and follow instructions, (For install 1284 board):
+There's so much types 1284(sanguino,bob,etc..) now i will show you which one worked for me like a charm.
+
+You need to visit this page and follow the instructions, (for install 1284 board):
 
 https://github.com/JChristensen/mighty-1284p/tree/v1.6.3
 
@@ -98,12 +100,14 @@ Then you can choose this type of board in your Arduino IDE:
 
 ![50264](https://user-images.githubusercontent.com/80991642/188249777-cf47c496-3979-4035-b6fd-4994014b81d4.png)
 
-Choosing a COM port and then your type of programmer you are now able to upload sketeches or burn the bootloader for the first time..
+Then you choose your COM port and then your type of programmer you are now able to upload sketeches or burn the bootloader for the first time..
+
+![6c4cedc24facf84159bee620e88f1-2807213](https://user-images.githubusercontent.com/80991642/188256789-306f5176-0955-4335-be45-ed9dae5521f0.png)
 
 
 ## Choosing a FTDI-USB for burn bootloader/ upload sketches (1284P).
 
-A Ftdi-usb programmer it's a very good and cheap solution for upload sketches..(or burn the bootloader).
+A Ftdi-usb programmer it's a very good and cheap solution for upload sketches..(or burn the bootloader for the first time).
 
 You will need to burn the bootloader the first time you connect the chip, and then you can upload sketches everytime you want.
 
@@ -118,9 +122,9 @@ If you have problems with pin-numbered. i bring you this other picture:
 You connect the ftdi-usb to the pc and open Arduino IDE:
 
 
-- Select your board (maniacbugh mighty 1284 etc..):
+- Select this board ("maniacbug" Mighty 1284p 16MHz using Optiboot):
 
-- Select your COM port (mine COM 10):
+- Select your COM port (mine it's COM 10):
 
 - Select your type of programmer (ftdi-usb):AVRISPMKII:
 
@@ -129,32 +133,50 @@ You connect the ftdi-usb to the pc and open Arduino IDE:
 
 And you can select "burn bootloader" and then you can upload sketches.
 
-For example you can upload an ARDUINO-IDE Basics-example for test your board:
+For example.. you can upload the Arduino IDE Basics-example, "Blink", for test your board:
 
+![6374404c5374b3991cbb44f9265f0-2807213](https://user-images.githubusercontent.com/80991642/188256783-b4ee56a9-1bf6-4a29-9ea8-c12059b917c1.png)
 
-Open examples "blink" and connect one led to see what happen...
+Open and upload the example "blink", and connect one led to pin 13 and GND to see what happen...
 
 ## Choosing an Arduino UNO for burn bootloader/ upload sketches (1284P).
 
-If you got an arduino uno it's the best solution i think..
+If you got an arduino uno.. it's the best solution i think..
 
-If you want to upload an sketch with arduino UNO, you must press SHIFT and then the upload button (Arduino IDE)
+### First you must prepare your arduino board
 
-This picture it's for connect an arduino UNO:
+ - Open arduino IDE and select the COM port where it's connected the arduino uno. (my case COM 4).
+
+ - Select the BOARD type (TOOLS---BOARD---ARDUINO UNO):Select Arduino UNO.
+
+ - Select FILE---EXAMPLES and choose "ARDUINO ISP"
+
+ - Upload the sketch into the arduino UNO.
+
+ - Finished. you have got a arduino uno programmer for the atmel 1284p (burn bootloader/upload sketches)
+
+
+If you want to upload an sketch into the 1284p with arduino UNO as programmer, you must press SHIFT and then the upload button (in Arduino IDE).
+
+![f387d02e1e32b2d08365066c6ffb0-2807213](https://user-images.githubusercontent.com/80991642/188256776-f04fb77f-a90d-4dd8-8e4f-3c0297392187.png)
+
+This picture it's for connect an arduino UNO to the 1284p and program the 1284p:
 
 ![50278](https://user-images.githubusercontent.com/80991642/188249563-389d8151-8595-4c84-b004-f8b0d7cfb937.gif)
 
-    NOTE: Don't forget the 10 microfarads electrolytic capacitor (there it's not in this picture..)
+    NOTE: Don't forget the 10 microfarads electrolytic capacitor (there it's not in this picture..) and the resistor 10K for the pin reset (also not in the picture)
 
 
-You connect the arduino uno to the pc and open Arduino IDE:
+Then you connect the arduino uno to the pc and open Arduino IDE:
 
 
-- Select your board (maniacbugh mighty 1284 etc..).
+- Select your board ("maniacbug" Mighty 1284p 16MHz using Optiboot).
 
-- Select your arduino uno COM port (mine COM 4).
+- Select your arduino uno COM port (mine it's COM 4).
 
-- Select your type of programmer (arduino uno):arduinoasisp.
+![627617618ef5594a886fa27a3e469-2807213](https://user-images.githubusercontent.com/80991642/188256798-4e7f54f2-b962-4b8d-b514-0a0748d776e0.png)
+
+- Select your type of programmer (arduino uno):"ARDUINO AS ISP".
 
 ![50265](https://user-images.githubusercontent.com/80991642/188249494-11ef6aab-b6cb-476d-9aaa-a431de221bf3.png)
 
@@ -192,11 +214,110 @@ Open examples "blink" and connect one led to see what happen...
 
    ![50413](https://user-images.githubusercontent.com/80991642/188255087-ef10ed31-d8c9-4d24-85c6-f3923262dbae.jpg)
 
+    This booster must be regulated..read the voltage at the output and turn the screw until voltage downs to +5v.
+    Be careful... because this boosters gives +20 volts if you dont turn the screw, (+20 volts it´s to kill the chip). Be sure to read +5v or less at the output.
+
    And here you can see the full circuit:
 
    ![CIRCUITOBATERIA](https://user-images.githubusercontent.com/80991642/188255284-29e71dac-d7cc-421a-81ea-227b5371676d.png)
 
 
-   # Configure HC-05 module
+   # Configure HC-05 bluetooth module
 
-  Y continuele continuele
+  Be aware that certain kind of HC-05 modules can´t be configured as MASTER. Are only Slaves.
+
+  The newest versions HC-05 and the HC-06 can´t be configured as MASTER.
+
+
+  We will need 2 HC-05 modules for every single MIDI controller we make..
+
+   - One hc-05 will be configure as MASTER and will be on the BT-USB-MIDI receptor (the PIC 18F-2550).
+
+   - The other one module will be configure as SLAVE and will be in the Midi Controller device.
+
+You can configure your HC-05 modules with a FTDI-USB programmer or an arduino uno, as well.
+
+If you use a ftdi-usb you must switch the ftdi device into 3,3v (change jumper mode). the conexion it´s so easy.. (arduino uno and ftdi):
+
+![d1d1fb109c9ba1eba90b1db717026-2815846](https://user-images.githubusercontent.com/80991642/188258766-ac7b043d-4a80-4a60-b948-4f40b3ee130f.jpg)
+
+- RX(FTDI)-----RX(HC-05).
+
+- TX(FTDI)-----TX(HC-05).
+
+- +5V(FTDI)----+5V(HC-05).
+
+- GND(FTDI)----GND(HC-05).
+
+    - NOTE: Don't forget to put the ftdi jumper into 3,3 volts mode.
+
+
+Ok..you must know there's so much types of HC-05 modules..
+
+But every model, i think.., you must press one button on the module-board before turning on the module and then release the button. In order to enter the device into "AT MODE"
+
+When hc-05 it´s in at-mode you can see the red led on the module, flashing slowly.
+
+Open your arduino ide and open serial monitor (com-port must be correct selected, no problem with the programmer type or the board-type, you can select whatever type, no problem).
+
+Then you have to select "BOTH NL AND CR".
+And select the correct bauds speed (for me i see words correctly at 38400bds)(maybe you see words correctly on 9600bds).
+
+Then. You must type:
+
+AT
+
+And if you see an answer (OK) everything it's fine.. can move forward...
+
+### Let's start to configure the HC-05 bluetooth module
+
+Type this:
+
+AT+NAME=PepeHeredia
+
+Your device will be name as PepeHeredia
+
+Then, type this:
+
+AT+ROLE=1
+
+And after type this:
+
+AT+ROLE?
+
+If you see AT+ROLE=1 your hc-05 module can be configured as MASTER (AT+ROLE=1 MASTER/ AT+ROLE=0 SLAVE)
+
+We can continue configuration, this time let's configure the bauds speed comunication, type this:
+
+AT+UART=115200,0,0
+
+If you type this:
+
+AT+PSWD=4567
+
+You will change the pin pswd connexion to 4567
+
+More...now type this
+
+AT+ADDR?
+
+And you will see the MAC hc-05 module address. Write it in a paper. But you must know you have to change every word, which must be on capital words..
+For example my master hc-05 module it´s:  98DA:78:013BA   (all words are always capital words, remember..)
+
+Now let's configure AT+CMODE (1=conexion everywhere/ 0= only bind conexions ).
+
+And if you choose bind conexions (i think it's the best)..
+
+AT+BIND=98DA:50:0126BA    
+
+(98DA:50:0126BA it´s the hc-05 SLAVE module MAC addres).
+
+If you finished your configuration type AT+RESET..
+
+You can test your bluetooth link with a led (PIN STATE and GND). When bluetooth module it's linked the led will be on.
+
+
+# The SUPER-COBRA MIDI Bluetooth controller
+## The pedalboard
+
+ANadale ya.parale parale
