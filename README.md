@@ -1,20 +1,19 @@
 ![logo](https://user-images.githubusercontent.com/80991642/188264119-e3f64080-294c-4dc2-a61c-32a80d3abbd1.png)
 
 
-# Ignotus666-Bluetooth-USB-MIDI-Controller. The SUPER-COBRA 
+# Ignotus666-Bluetooth-USB-MIDI-Controller. The SUPER-COBRA, 
 
-This is my second device i have built. It's my best Midi-controller.
+This it's the second device i have built. It's my best Midi-controller.
 
-Ignotus666 is the creator:   https://github.com/ignotus666
+Ignotus666 is his creator:   https://github.com/ignotus666
 
-# (ignotus666 midi-controller)
 The philosophy of this controller it's simple:
 
 
-- One device named as receptor will be the Bluetooth-USB midi signal reception, this device receives serial signal from the midi controllers(tx and rx), through the hc-05 (master) and transform this signal into midi signal which send into the pc via cable USB.
+- One device named as receptor will be the Bluetooth-USB midi signal receptor, this device receives the serial signal from the midi controllers (tx and rx pins), through the hc-05 (master) and transforms this signal into midi and send it into the pc via Usb cable.
 
 
-- The other devices are one atmel 1284 (one per midi-controller)and one hc-05 configured as SLAVE (one per midi-controller).You can build so many controllers as you want...
+- The other devices are one chip atmel 1284 (one per midi-controller) and one hc-05 configured as SLAVE (one per midi-controller). You can build so many controllers as you want...(one master = one slave)
 
 
 ## The pedalboard
@@ -28,7 +27,12 @@ You can watch how to build your pedalboard on his github repository, and here i 
 
 ![20220812_021333](https://user-images.githubusercontent.com/80991642/188260381-aee3cd93-18c4-4671-8aab-070a11c7b0e7.jpg)
 
-You can download the components list here:
+![Sin nombre34](https://user-images.githubusercontent.com/80991642/188267227-4c6f0bac-434f-4efe-aeae-00c80574a7e2.png)
+
+![Sin nombreñl](https://user-images.githubusercontent.com/80991642/188267291-d2734cc1-4102-4c43-b103-8e386fd9a87f.png)
+
+
+You can download every file in the .zip , but you can see the components list here:
 
 https://drive.google.com/uc?id=1DSQUBxHxhUGM9xNX7fbMygEOfUKrwz3I&export=download
 
@@ -40,7 +44,25 @@ You can see schematics here:
 https://photos.google.com/search/_tra_/photo/AF1QipMGrOhExx-JlsJZWpQXzOmH4l8pAK77iXgN28EQ
 
 
+In the .zip there's some gimp files and .png files, located in ARTWORK (if you want to use some pictures for your controller).
+
+Working images with gimp in layers, it's so easy..
+
+- Install gimp:
+
+https://www.gimp.org/
+
+
+![20220812_014343](https://user-images.githubusercontent.com/80991642/188267579-655b3772-8dfb-4f6f-a327-1094c434e66e.jpg)
+
+![20220812_014419](https://user-images.githubusercontent.com/80991642/188267587-6c0ea1ec-15d8-4772-b7d3-516c819ab902.jpg)
+
+![20220812_014301](https://user-images.githubusercontent.com/80991642/188267564-a064bae2-b2f3-4165-ad23-21d94b5ca6d6.jpg)
+
+
 ## The Desktop Controller (pots)
+
+![Sin nombrefrr](https://user-images.githubusercontent.com/80991642/188267988-86a20ed8-bd0d-41e7-a6f9-08789fad2e46.png)
 
 First, you must download the code from ignotus666 github:
 
@@ -48,7 +70,12 @@ First, you must download the code from ignotus666 github:
 
 You can watch how to build your pedalboard on his github repository, and here i bring you how i have built mine
 
+![Sin nombrefdfdfd](https://user-images.githubusercontent.com/80991642/188267737-b5842383-3834-4798-9bec-64b2ed29dc98.png)
+
 ![Sin nombre66](https://user-images.githubusercontent.com/80991642/188261036-c0f9c550-f15b-4ef5-881b-310eff8469e9.png)
+
+![Sin nombredr](https://user-images.githubusercontent.com/80991642/188267695-44a8b14c-68b7-4afe-93f6-9410b43c6ff4.png)
+
 
 You can download the components list here:
 
@@ -60,6 +87,15 @@ screen SSD1306 0,91 inches 128x32 OLED I2C (4PIN).
 You can see schematics here:
 
 https://photos.google.com/search/_tra_/photo/AF1QipPfj81Rz_Q_teM37dQCxnwQC3Gwz5QAASjpksV0
+
+You can find some gimp and .png files in ARTWORK
+
+![Sin títulogfg](https://user-images.githubusercontent.com/80991642/188267779-b280c873-fd3a-4933-aac7-c5f3f1bca042.png)
+
+![Sin nombredfsgdfga](https://user-images.githubusercontent.com/80991642/188267820-eaf329f7-c51c-418f-8586-63ee0299132f.png)
+
+![Sin nombrefasdfas](https://user-images.githubusercontent.com/80991642/188267898-e016f619-ab78-455c-b0d3-3cdac76cbaf9.png)
+
 
 
 ## The receptor Bluetooth USB Midi.
