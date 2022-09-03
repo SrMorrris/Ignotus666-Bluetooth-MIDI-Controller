@@ -1,36 +1,120 @@
-# Ignotus666-Bluetooth-USB-MIDI-Controller
-This is my second device, i have built from Ignotus666 MIDI controller:
-
-I will show you how i have built mine, but you must first download the code from ignotus666 repository:
-
- - Pedalboard: https://github.com/ignotus666/Bluetooth-Pedalboard
-
- - Desktop-controller (pots): https://github.com/ignotus666/desktop-midi-controller
+![logo](https://user-images.githubusercontent.com/80991642/188264119-e3f64080-294c-4dc2-a61c-32a80d3abbd1.png)
 
 
- - One chip "Atmel 1284" and one HC-05 bluetooth module configured as SLAVE. For every MIDI-controller (emitter).
- - One PIC 18F-2550 and HC-05 configured as MASTER (receptor BT-USB-MIDI).One HC-05 for every MIDI-controller.
- - Multiplexers 4051.
- 
+# Ignotus666-Bluetooth-USB-MIDI-Controller. The SUPER-COBRA 
 
-            
- 
-This awesome controller created by ignotus666 it's my best midi controller.
+This is my second device i have built. It's my best Midi-controller.
 
-This controller have one device (PIC 18F-2550) programmed as receptor bluetooth and USB-MIDI comunication. 
+Ignotus666 is the creator:   https://github.com/ignotus666
+
+# (ignotus666 midi-controller)
+The philosophy of this controller it's simple:
+
+
+- One device named as receptor will be the Bluetooth-USB midi signal reception, this device receives serial signal from the midi controllers(tx and rx), through the hc-05 (master) and transform this signal into midi signal which send into the pc via cable USB.
+
+
+- The other devices are one atmel 1284 (one per midi-controller)and one hc-05 configured as SLAVE (one per midi-controller).You can build so many controllers as you want...
+
+
+## The pedalboard
+
+First, you must download the code from ignotus666 github:
+
+https://github.com/ignotus666/Bluetooth-Pedalboard
+
+You can watch how to build your pedalboard on his github repository, and here i bring you how i have built mine
+(my experience)
+
+![20220812_021333](https://user-images.githubusercontent.com/80991642/188260381-aee3cd93-18c4-4671-8aab-070a11c7b0e7.jpg)
+
+You can download the components list here:
+
+https://drive.google.com/uc?id=1DSQUBxHxhUGM9xNX7fbMygEOfUKrwz3I&export=download
+
+This Midi controller (pedalboard)has got one atmel 1284 and one hc-05 configured as SLAVE, one mux 4051 and one
+screen ILI 9341 2,4/2,8 inches 240x320 TFT-LCD .
+
+You can see schematics here:
+
+https://photos.google.com/search/_tra_/photo/AF1QipMGrOhExx-JlsJZWpQXzOmH4l8pAK77iXgN28EQ
+
+
+## The Desktop Controller (pots)
+
+First, you must download the code from ignotus666 github:
+
+- Desktop-controller (pots): https://github.com/ignotus666/desktop-midi-controller
+
+You can watch how to build your pedalboard on his github repository, and here i bring you how i have built mine
+
+![Sin nombre66](https://user-images.githubusercontent.com/80991642/188261036-c0f9c550-f15b-4ef5-881b-310eff8469e9.png)
+
+You can download the components list here:
+
+https://drive.google.com/uc?id=1LK4GFyihy7jwFu3tx3JY8D9s9N_1IbXA&export=download
+
+This Midi controller (desktop controller) one atmel 1284 and one hc-05 configured as SLAVE, one mux 4051 and 
+screen SSD1306 0,91 inches 128x32 OLED I2C (4PIN).
+
+You can see schematics here:
+
+https://photos.google.com/search/_tra_/photo/AF1QipPfj81Rz_Q_teM37dQCxnwQC3Gwz5QAASjpksV0
+
+
+## The receptor Bluetooth USB Midi.
+
+The instructions about how to build the receptor are in the ignotus666 repository, you will find it on both files (pedalboard and desktop-controller):
+
+https://github.com/ignotus666/desktop-midi-controller
+
+https://github.com/ignotus666/Bluetooth-Pedalboard
+
+You can download the components list here:
+
+https://drive.google.com/uc?id=17Sct6pLxF_GxMCLaB8IY5S19NntpqlOr&export=download
+
+The receptor Bluetooth USB-MIDI,has got one PIC 18F-2550 and modules hc-05 configured as MASTERS, don´t forget to connect one led to STATE pin and GND (for check bluetooth link).
+
+The receptor have one chip (PIC 18F-2550) programmed as receptor bluetooth and USB-MIDI comunication. 
 
 You will only have to connect the usb cable, and will be recognised as BT-MIDI-receptor, no installation required.
 
 
  Every bluetooth module HC-05, connected in receptor (one per MIDI device) must be configured as MASTER.
 
-The MIDI Controllers are chips atmel 1284 and mux 4051. One HC-05 configured as SLAVE (one per MIDI device):
 
- - One MIDI controller named as pedalboard_neopixel_1.13 (pedalboard): ws2812b leds, ILI9341 screen... 
- - Another Midi controller named as desktop_midi_controller (potentiometers): 128x32 I2C screen SSD1306, Analog joystick, leds..
+You can see schematics here:
+
+https://photos.google.com/search/_tra_/photo/AF1QipPQdP5PnPhRYeayPkFFX1c2DS-Jxpb-6Q2AOWZB
 
 
-## Atmel 1284
+
+So let's resume..
+
+
+
+ - One chip "Atmel 1284" and one HC-05 bluetooth module configured as SLAVE. For every MIDI-controller (emitter). 
+
+
+ - One PIC 18F-2550 and modules HC-05 configured as MASTER (receptor BT-USB-MIDI).One HC-05 MASTER for every MIDI controller (slave).
+      
+ 
+This awesome controller created by ignotus666 it's my best midi controller.
+
+
+
+The MIDI Controllers are chips atmel 1284 and also mux 4051, and  one HC-05 configured as SLAVE (one per MIDI device):
+
+ - One MIDI controller will be named as pedalboard_neopixel_1.13 (pedalboard): ws2812b leds, ILI9341 screen,atmel1284, mux4051, etc...
+
+
+ - Another Midi controller named as desktop_midi_controller (potentiometers): 128x32 I2C screen SSD1306, Analog joystick, leds, atmel1284, mux4051, etc..
+
+ - You can build more midi controllers, if you want. you only need to put one hc-05 configured as master in the receptor and build your midi device and put one hc-05 configured as slave.
+
+
+## Building the Atmel 1284p board
 
 You need to build your own arduino board. Components list:
 
@@ -318,61 +402,6 @@ AT+BIND=98DA:50:0126BA       (98DA:50:0126BA it´s the hc-05 SLAVE module MAC ad
 
 If you finished your configuration type AT+RESET..
 
-You can test your bluetooth link with a led (PIN STATE and GND). When bluetooth module it's linked.. the led will be on.
+You can test your bluetooth link with a led (connected to STATE and GND). When bluetooth module it's linked.. the led will be on.
 
 
-# The SUPER-COBRA MIDI Bluetooth controller
-## The pedalboard
-First, you must download the code from ignotus666 github:
-
-https://github.com/ignotus666/Bluetooth-Pedalboard
-
-You can watch how to build your pedalboard on his github repository, and here i bring you how i have built mine
-
-![20220812_021333](https://user-images.githubusercontent.com/80991642/188260381-aee3cd93-18c4-4671-8aab-070a11c7b0e7.jpg)
-
-You can download the components list here:
-
-https://drive.google.com/uc?id=1DSQUBxHxhUGM9xNX7fbMygEOfUKrwz3I&export=download
-
-This Midi controller (pedalboard) one atmel 1284 and one hc-05 configured as SLAVE, one mux 4051 and 
-screen ILI 9341 2,4/2,8 inches 240x320 TFT-LCD .
-
-You can see schematics here:
-
-https://photos.google.com/search/_tra_/photo/AF1QipMGrOhExx-JlsJZWpQXzOmH4l8pAK77iXgN28EQ
-
-
-## The Desktop Controller (pots)
-
-First, you must download the code from ignotus666 github:
-
-- Desktop-controller (pots): https://github.com/ignotus666/desktop-midi-controller
-
-You can watch how to build your pedalboard on his github repository, and here i bring you how i have built mine
-
-![Sin nombre66](https://user-images.githubusercontent.com/80991642/188261036-c0f9c550-f15b-4ef5-881b-310eff8469e9.png)
-
-You can download the components list here:
-
-https://drive.google.com/uc?id=1LK4GFyihy7jwFu3tx3JY8D9s9N_1IbXA&export=download
-
-This Midi controller (desktop controller) one atmel 1284 and one hc-05 configured as SLAVE, one mux 4051 and 
-screen SSD1306 0,91 inches 128x32 OLED I2C (4PIN).
-
-You can see schematics here:
-
-https://photos.google.com/search/_tra_/photo/AF1QipPfj81Rz_Q_teM37dQCxnwQC3Gwz5QAASjpksV0
-
-
-## The receptor Bluetooth USB Midi.
-
-The instructions about how to build the receptor are in the ignotus666 repository, you will find it on both files:
-
-https://github.com/ignotus666/desktop-midi-controller
-
-https://github.com/ignotus666/Bluetooth-Pedalboard
-
-You can download the components list here:
-
-Will continue..
