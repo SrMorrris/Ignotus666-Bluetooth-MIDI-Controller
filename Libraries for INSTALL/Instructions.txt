@@ -10,8 +10,11 @@ LIBRARIES______________________________________________________
 
 
 ATMEL 1284_____________________________________________________
+Instructions and creator here:
+https://github.com/JChristensen/mighty-1284p/tree/v1.6.3
 
 "mighty-1284p-1.6.3"
+
 -Unzip it in c:/arduino/hardware.
 
 Next time you open ARDUINO IDE you can choose this board:
