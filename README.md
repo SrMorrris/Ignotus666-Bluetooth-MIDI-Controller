@@ -11,9 +11,9 @@ I will show you how i have built mine, but you must first download the code from
  - One chip "Atmel 1284" and one HC-05 bluetooth module configured as SLAVE. For every MIDI-controller (emitter).
  - One PIC 18F-2550 and HC-05 configured as MASTER (receptor BT-USB-MIDI).One HC-05 for every MIDI-controller.
  - Multiplexers 4051.
- - Screens: - ILI 9341 2,4/2,8 inches 240x320 TFT-LCD for the pedalboard.
+ 
 
-            - SSD1306 0,91 inches 128x32 OLED I2C (4PIN) for the desktop controller (pots).
+            
  
 This awesome controller created by ignotus666 it's my best midi controller.
 
@@ -271,13 +271,15 @@ And if you see an answer (OK) everything it's fine.. can move forward...
 
 ### Let's start to configure the HC-05 bluetooth module
 
-Type this:
+A important component of this controller it's the HC-05 module, and must be configured.
 
-AT+NAME=PepeHeredia
+- In the serial monitor (arduino ide), type this:
+
+    AT+NAME=PepeHeredia
 
 Your device will be name as PepeHeredia
 
-Then, type this:
+- Then, type this:
 
 AT+ROLE=1
 
@@ -287,37 +289,90 @@ AT+ROLE?
 
 If you see AT+ROLE=1 your hc-05 module can be configured as MASTER (AT+ROLE=1 MASTER/ AT+ROLE=0 SLAVE)
 
-We can continue configuration, this time let's configure the bauds speed comunication, type this:
+- This time let's configure the bauds speed comunication, type this:
 
 AT+UART=115200,0,0
 
-If you type this:
+- If you type this:
 
 AT+PSWD=4567
 
 You will change the pin pswd connexion to 4567
 
-More...now type this
+- More...now type this:
 
 AT+ADDR?
 
-And you will see the MAC hc-05 module address. Write it in a paper. But you must know you have to change every word, which must be on capital words..
-For example my master hc-05 module it´s:  98DA:78:013BA   (all words are always capital words, remember..)
+And you will see the MAC hc-05 module address. Write it in a paper you will need it when configure the SLAVE module. But you must know you have to change every word in the MAC address, every word must be on capital words..
 
-Now let's configure AT+CMODE (1=conexion everywhere/ 0= only bind conexions ).
+For example my master hc-05 module it´s: 98da:78:013ba 
 
-And if you choose bind conexions (i think it's the best)..
+but really it's:  98DA:78:013BA    (all words are always capital words, remember..)
 
-AT+BIND=98DA:50:0126BA    
+- Now let's configure AT+CMODE (1=conexion everywhere/ 0= only bind conexions ).
 
-(98DA:50:0126BA it´s the hc-05 SLAVE module MAC addres).
+- And if you choose bind conexions (i think it's the best)..
+
+AT+BIND=98DA:50:0126BA       (98DA:50:0126BA it´s the hc-05 SLAVE module MAC addres).
+
 
 If you finished your configuration type AT+RESET..
 
-You can test your bluetooth link with a led (PIN STATE and GND). When bluetooth module it's linked the led will be on.
+You can test your bluetooth link with a led (PIN STATE and GND). When bluetooth module it's linked.. the led will be on.
 
 
 # The SUPER-COBRA MIDI Bluetooth controller
 ## The pedalboard
+First, you must download the code from ignotus666 github:
 
-ANadale ya.parale parale
+https://github.com/ignotus666/Bluetooth-Pedalboard
+
+You can watch how to build your pedalboard on his github repository, and here i bring you how i have built mine
+
+![20220812_021333](https://user-images.githubusercontent.com/80991642/188260381-aee3cd93-18c4-4671-8aab-070a11c7b0e7.jpg)
+
+You can download the components list here:
+
+https://drive.google.com/uc?id=1DSQUBxHxhUGM9xNX7fbMygEOfUKrwz3I&export=download
+
+This Midi controller (pedalboard) one atmel 1284 and one hc-05 configured as SLAVE, one mux 4051 and 
+screen ILI 9341 2,4/2,8 inches 240x320 TFT-LCD .
+
+You can see schematics here:
+
+https://photos.google.com/search/_tra_/photo/AF1QipMGrOhExx-JlsJZWpQXzOmH4l8pAK77iXgN28EQ
+
+
+## The Desktop Controller (pots)
+
+First, you must download the code from ignotus666 github:
+
+- Desktop-controller (pots): https://github.com/ignotus666/desktop-midi-controller
+
+You can watch how to build your pedalboard on his github repository, and here i bring you how i have built mine
+
+![Sin nombre66](https://user-images.githubusercontent.com/80991642/188261036-c0f9c550-f15b-4ef5-881b-310eff8469e9.png)
+
+You can download the components list here:
+
+https://drive.google.com/uc?id=1LK4GFyihy7jwFu3tx3JY8D9s9N_1IbXA&export=download
+
+This Midi controller (desktop controller) one atmel 1284 and one hc-05 configured as SLAVE, one mux 4051 and 
+screen SSD1306 0,91 inches 128x32 OLED I2C (4PIN).
+
+You can see schematics here:
+
+https://photos.google.com/search/_tra_/photo/AF1QipPfj81Rz_Q_teM37dQCxnwQC3Gwz5QAASjpksV0
+
+
+## The receptor Bluetooth USB Midi.
+
+The instructions about how to build the receptor are in the ignotus666 repository, you will find it on both files:
+
+https://github.com/ignotus666/desktop-midi-controller
+
+https://github.com/ignotus666/Bluetooth-Pedalboard
+
+You can download the components list here:
+
+Will continue..
